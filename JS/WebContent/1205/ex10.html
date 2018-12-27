@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+table {
+	width: 100%;
+	height: 900px;
+	border: 1px solid black;
+}
+tr {
+	text-align: center;
+}
+td {
+	border: 1px solid black;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th colspan="7">
+				<h1>호남대학교 PBL기반 IoT 융합서비스 개발자과정 자리표</h1>
+			</th>
+		</tr>
+		<tr>
+			<td class="team1">주효빈</td>
+			<td class="team1">박종진</td>
+			<td rowspan="4">복도</td>
+			<td></td>
+			<td></td>
+			<td class="team2">봉수연</td>
+			<td class="team2">김선민</td>
+		</tr>
+		<tr>
+			<td class="team1">이규용</td>
+			<td class="team1">서단아</td>
+			<td class="team3">고단영</td>
+			<td class="team3">문건모</td>
+			<td class="team2">정영진</td>
+			<td class="team2">임창환</td>
+		</tr>
+		<tr>
+			<td class="team4">박현기</td>
+			<td class="team4">이홍재</td>
+			<td class="team3">박지수</td>
+			<td class="team3">문나래</td>
+			<td class="team3">백주혁</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="team4">이병진</td>
+			<td class="team4">정승우</td>
+			<td class="team5">정혜수</td>
+			<td class="team5">김채현</td>
+			<td class="team5">오수환</td>
+			<td class="team5">이해안</td>
+		</tr>
+		<tr>
+			<td colspan="7">
+				<button onclick="one()">1조</button>
+				<button onclick="two()">2조</button>
+				<button onclick="tri()">3조</button>
+				<button onclick="fur()">4조</button>
+				<button onclick="fiv()">5조</button>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function one() {
+			var team = document.getElementsByClassName("team1");
+			for (var i = 0; i < team.length; i++) {
+				team[i].style.backgroundColor="red";
+				team[i].style.color="white";
+			}
+		}
+		function two() {
+			var team = document.getElementsByClassName("team2");
+			for (var i = 0; i < team.length; i++) {
+				team[i].style.backgroundColor="blue";
+				team[i].style.color="white";
+			}
+		}
+		function tri() {
+			var team = document.getElementsByClassName("team3");
+			for (var i = 0; i < team.length; i++) {
+				team[i].style.backgroundColor="green";
+				team[i].style.color="white";
+			}
+		}
+		function fur() {
+			var team = document.getElementsByClassName("team4");
+			for (var i = 0; i < team.length; i++)
+				team[i].style.backgroundColor="pink";
+		}
+		function fiv() {
+			var team = document.getElementsByClassName("team5");
+			for (var i = 0; i < team.length; i++) {
+				team[i].style.backgroundColor="black";
+				team[i].style.color="white";
+			}
+		}
+	</script>
+</body>
+</html>

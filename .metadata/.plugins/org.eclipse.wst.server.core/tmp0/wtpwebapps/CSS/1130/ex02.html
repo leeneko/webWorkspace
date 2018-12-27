@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+body {
+	margin: 0px;
+}
+
+#nav {
+	width: 165px;
+	box-shadow: 2px 2px 10px gray;
+}
+
+#first_ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#first_ul > li > a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	height: 100px;
+	border-bottom: 2px solid gray;
+	text-indent: 20px;
+	line-height: 100px;
+}
+
+#first_ul > li > a:hover {
+	background-color: whitesmoke;
+}
+
+#second_ul {
+	display: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+li:hover > #second_ul {
+	display: block;
+}
+
+#second_ul > li > a {
+	border-bottom: 1px dotted gray;
+	text-decoration: none;
+	display: block;
+}
+
+#second_ul > li > a:hover {
+	background-color: whitesmoke;
+}
+</style>
+</head>
+<body>
+	<div id="nav">
+		<ul id="first_ul">
+			<li id="first_li">
+				<a href="#">공지사항</a>
+				<ul id="second_ul">
+					<li><a href="#">전체공지</a></li>
+					<li><a href="#">식당공지</a></li>
+					<li><a href="#">학생회공지</a></li>
+					<li><a href="#">복지관공지</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">자유게시판</a>
+				<ul id="second_ul">
+					<li><a href="#">학생게시판</a></li>
+					<li><a href="#">교수게시판</a></li>
+					<li><a href="#">직원게시판</a></li>
+				</ul>
+			</li>
+			<li><a href="#">갤러리</a></li>
+			<li><a href="#">오시는 길</a></li>
+			<li><a href="#">Q & A</a></li>
+		</ul>
+	</div>
+</body>
+</html>

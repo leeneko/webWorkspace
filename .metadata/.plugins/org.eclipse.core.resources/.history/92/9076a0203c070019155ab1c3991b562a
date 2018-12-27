@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<fieldset>
+	<legend>글쓰기</legend>
+	<form action="Upload" method="post" enctype="application/x-www-form-urlencoded">
+		<table>
+			<tr>
+				<td>작성자</td>
+				<td><input type="text" name="writter">
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="title">
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea rows="10" cols="20" name="content"></textarea>
+			</tr>
+			<tr>
+				<td>파일</td>
+				<td><input type="file" name="fileName"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="작성"></td>
+				<td><input type="reset" value="취소"></td>
+			</tr>
+		</table>
+	</form>
+</fieldset>
+</body>
+</html>

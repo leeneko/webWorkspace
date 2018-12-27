@@ -1,0 +1,33 @@
+package DAO;
+
+import java.sql.*;
+
+public class OracleTest {
+	public static void main(String[] args) {
+		DBConnection dbconn = new DBConnection();
+		
+		try {
+			String sql = "SELECT * FROM MEMBER";
+			
+			dbconn.conn = DBConnection.getConnection();
+			dbconn.pstm = conn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println(rs.getString("id") + "\t" + rs.getString("pw"));
+				System.out.println(rs.getString("nick") + "\t" + rs.getString("email"));
+			}
+		} catch (SQLException sqle) {
+			System.out.println("SELECT 문에서 예외 발생");
+			sqle.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) { rs.close(); }
+				if (pstm != null) { pstm.close(); }
+				if (conn != null) { conn.close(); }
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

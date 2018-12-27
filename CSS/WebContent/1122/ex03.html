@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	.span1 {
+		font-size: 30px;
+	}
+	.span2 {
+		font-size: 2em;
+	} /* em : 부모 태그의 사이즈를 상속받아 사이즈 조절 */
+	.span3 {
+		font-size: 2rem;
+	} /* rem : 기본 크기(16px)를 상속받아 사이즈 조절 */
+</style>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<span class="span1">
+		Span할아버지
+		<span class="span2">
+			Span아버지
+			<span class="span3">Span아들</span>
+	</span>
+	</span>
+</body>
+</html>

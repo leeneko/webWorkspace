@@ -1,0 +1,45 @@
+package com.message;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/MessageSendCon")
+public class MessageSendCon extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("EUC-KR");
+		response.setCharacterEncoding("EUC-KR");
+		
+		HttpSession session = request.getSession();
+		
+		String name = (String) session.getAttribute("email");
+		String email = request.getParameter("email");
+		String content = request.getParameter("content");
+		
+		MessageDTO dto = new MessageDTO(name, email, content);
+		MessageDAO dao = new MessageDAO();
+		
+		int = dao.sendMessage(dto);
+		PrintWriter out = response.getWriter();
+		if (result) {
+			out.print("<script>");
+			out.print("alert('메세지 전송 성공');");
+			out.print("</script>");
+			response.sendRedirect("main.jsp");
+		} else {
+			out.print("<script>");
+			out.print("alert('메세지 전송 실패');");
+			out.print("</script>");
+			response.sendRedirect("main.jsp");
+		}
+	}
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li>item1</li>
+		<li>item2</li>
+		<li>item3</li>
+		<li>item4</li>
+	</ul>
+	<ol>
+		<li>item9</li>
+		<li>item10</li>
+		<li>item11</li>
+		<li>item12</li>
+	</ol>
+	<button onclick="change1()">색깔변경</button>
+	<button onclick="add1()">UL추가</button>
+<script type="text/javascript">
+	// css selector
+	function change1() {
+		var li1 = document.querySelector("ul li");
+		li1.style.cssText = "color:red";
+		var li_all = document.querySelectorAll("ul li");
+		li_all[2].style.cssText = "color:blue";
+		var ol = document.querySelectorAll("ol li");
+		ol[1].style.cssText = "color:green";
+	}
+	function add1() { // 태그 추가
+		// 1. 어떤 태그에 태그를 추가시킬건지
+		var ul = document.querySelect("ul");
+		// 2. 추가시킬 태그가 어떤건지
+		var li = document.createElement("li");
+		
+	}
+</script>
+</body>
+</html>

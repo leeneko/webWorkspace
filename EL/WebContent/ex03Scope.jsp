@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	request.setAttribute("req", "reqScope");
+	session.setAttribute("ses", "sessionScope");
+	application.setAttribute("app", "applicationScope");
+	
+	RequestDispatcher dis = request.getRequestDispatcher("ex03Scope_rec.jsp");
+	dis.forward(request, response);
+%>
+</body>
+</html>

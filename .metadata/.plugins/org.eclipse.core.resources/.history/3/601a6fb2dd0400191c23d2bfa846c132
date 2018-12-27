@@ -1,0 +1,7 @@
+package com.dao;
+
+public class MemberDTO {
+	String email;
+	String address;
+	String tel;
+}

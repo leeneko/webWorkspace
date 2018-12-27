@@ -1,0 +1,18 @@
+@charset "EUC-KR";
+table {
+	border: 1px solid gray;
+	cellspacing: 3px;
+	empty-cells: hide;
+}
+
+th {
+	color: white;
+	font-size: 10px;
+	height: 20px;
+}
+
+td {
+	border-bottom: 1px solid whitesmoke;
+	font-size: 10px;
+	height: 20px;
+}

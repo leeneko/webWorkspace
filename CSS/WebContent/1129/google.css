@@ -1,0 +1,58 @@
+@charset "EUC-KR";
+.wrapper {
+	width: 100%;
+	height: 800px;
+	/* border: 1px solid red; */
+}
+
+*:active {
+	background-color: black;
+	transition: 2s;
+}
+
+.header {
+	width: 100%;
+	height: 8%;
+	/* border: 1px solid blue; */
+}
+
+.content {
+	width: 100%;
+	height: 92%;
+	/* border: 1px solid green; */
+	clear: both;
+	text-align: center;
+}
+
+.header img {
+	width: 370px;
+	height: 70px;
+	float: right;
+}
+
+.content > a > img {
+	width: 400px;
+	height: 130px;
+	margin-top: 150px;
+}
+
+.content > input {
+	width: 600px;
+	height: 35px;
+	margin-top: 30px;
+	border: 1px solid lightgray;
+	background-image: url(inputimage.PNG);
+	background-repeat: no-repeat;
+	background-position: 98% 50%;
+}
+
+.content > button {
+	width: 150px;
+	height: 45px;
+	border: 0px;
+	background-color: #eeeeee;
+	font-size: 15px;
+	color: #757575;
+	font-weight: bold;
+	margin-top: 15px;
+}

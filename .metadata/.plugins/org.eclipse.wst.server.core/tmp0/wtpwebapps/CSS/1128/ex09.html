@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	div {
+		width: 100px;
+		height: 100px;
+		background-color: orange;
+	}
+	.first_div:hover ~ .second_div {
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		transition: 2s;
+	}
+	.first_div:active ~ .second_div {
+		width: 200px;
+		height: 200px;
+		background-color: orange;
+		transition: 2s;
+	}
+</style>
+</head>
+<body>
+	<div class="first_div"></div>
+	<div class="second_div"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	
+	animation-name: ani1; /* 애니메이션 이름 */
+	animation-duration: 2s;
+	/*
+	animation-iteration-count: infinite;
+	animation-direction: alternate; /* reverse */
+	*/
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+}
+
+div:hover {
+	animation-play-state: paused;
+}
+
+@keyframes ani1 {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	
+	100% {
+		transform: translate(300px, 0px);
+	}
+}
+</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

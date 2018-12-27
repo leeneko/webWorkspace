@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+}
+
+#div1 {
+	background-color: red;
+	transform: skew(20deg);
+}
+
+#div2 {
+	background-color: blue;
+	transform: translate(100px, 100px) scale(2, 2) rotate(45deg);
+	/* transition는 다른 태그들을 참조하지 않기 때문에 애니메이션에 적합
+	   position는 다른 태그들을 참조하기 때문에 포지셔닝에 적합
+	*/
+}
+</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+</html>

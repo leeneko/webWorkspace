@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="ex02Form.jsp">
+		ID <input type="text" name="id">
+		ADDRESS <input type="text" name="address">
+		<input type="checkbox" name="hobby" value="운동">
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

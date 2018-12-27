@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	String req = (String) request.getAttribute("req");
+	String ses = (String) session.getAttribute("session");
+	String app = (String) application.getAttribute("application");
+%>
+req영역 : 
+ses영역 : 
+app영역 : 
+</body>
+</html>

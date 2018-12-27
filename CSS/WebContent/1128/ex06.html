@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	div {
+		width: 300px;
+		height: 300px;
+	}
+	.div1 {
+		background-color: red;
+		margin-bottom: 30px; /* margin collapse : margin 여백끼리 겹치는 현상 */
+		padding: 100px;
+		box-sizing: border-box; /* padding 속성으로 태그의 크기가 영향을 받지 않게하는 속성 */
+	}
+	.div2 {
+		margin-top: 30px; /* margin collapse : margin 여백끼리 겹치는 현상 */
+		border: 1px solid blue;
+		border-radius: 150px;
+	}
+</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+</body>
+</html>

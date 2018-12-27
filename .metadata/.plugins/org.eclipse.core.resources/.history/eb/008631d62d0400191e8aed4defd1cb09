@@ -1,0 +1,29 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class memberDAO {
+
+	public void join(memberVO vo) {
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		
+		try {
+			String sql = "INSERT INTO member VALUES (?, ?, ?, ?)";
+			
+			conn = DBConnection.getConnection();
+			pstm = conn.prepareStatement(sql);
+			
+			
+		} catch (SQLException sqle) {
+			
+		} finally {
+			
+		}
+	}
+	
+}

@@ -1,0 +1,81 @@
+package com;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class FileDAO {
+	private Connection conn;
+	private PreparedStatement pst;
+	private ResultSet rs;
+
+	public void getConnection() {
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "system";
+			String password = "1234";
+
+			conn = DriverManager.getConnection(url, user, password);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void close() {
+		try {
+			if (rs != null) { rs.close(); }
+			if (pst != null) { pst.close(); }
+			if (conn != null) { conn.close(); }
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public int insertBoard(FileDTO dto) {
+		int cnt = 0;
+		getConnection();
+		
+		try {
+			// INSERT INTO web_board VALUES(bnum.nextval, writer, title, content, fileName, sysdate)
+			String sql = "INSERT INTO web_board VALUES(bnum.nextval, ?, ?, ?, ?, sysdate)";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, dto.getWritter());
+			pst.setString(2, dto.getTitle());
+			pst.setString(3, dto.getContent());
+			pst.setString(4, dto.getFileName());
+			
+			cnt = pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+	}
+	
+	public ArrayList<FileDTO> selectAll() {
+		ArrayList<FileDTO> list = new ArrayList<FileDTO>();
+		getConnection();
+		
+		try {
+			String sql = 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	}
+}

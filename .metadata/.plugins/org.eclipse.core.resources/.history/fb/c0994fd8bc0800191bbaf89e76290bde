@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+input {
+	width: 200px;
+	height: 40px;
+	display: block;
+}
+</style>
+</head>
+<body>
+	<input type="button" value="추가" onclick="add()">
+	<input type="button" value="삭제" onclick="del()"
+	<input type="text">
+<script type="text/javascript">
+	function add() {
+		var body = document.querySelector("body");
+		var input = document.createElement("input");
+		
+		body.appendChild(input);
+	}
+</script>
+</body>
+</html>

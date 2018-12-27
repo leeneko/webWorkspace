@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+@keyframes ani1 {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	
+	20% {
+		transform: translate(100px, 0px);
+	}
+	
+	40% {
+		transform: translate(100px, 100px);
+	}
+	
+	60% {
+		transform: translate(200px, 100px);
+	}
+	
+	80% {
+		transform: translate(200px, 0px);
+	}
+	
+	100% {
+		transform: translate(300px, 0px);
+	}
+}
+
+body {
+	font-size: 36px;
+	color: white;
+	animation: ani1 1s infinite;
+	animation-direction: alternate;
+}
+
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

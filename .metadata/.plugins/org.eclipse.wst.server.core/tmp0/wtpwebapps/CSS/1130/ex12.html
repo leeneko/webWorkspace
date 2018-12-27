@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+div {
+	height: 1000px;
+	background-color: red;
+	
+	animation: ani1 2s infinite;
+}
+
+div:hover {
+	animation-play-state: paused;
+}
+
+#div1 {
+	float: left;
+}
+
+#div2 {
+	float: right;
+}
+
+@keyframes ani1 {
+	0% {
+		width: 0%;
+	}
+	
+	100% {
+		width: 50%;
+	}
+}
+</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+</html>

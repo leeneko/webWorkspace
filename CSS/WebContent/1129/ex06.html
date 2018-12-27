@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+span {
+	display: none;
+}
+a:hover + span {
+	display: inline;
+}
+/* 
+a.naver:hover ~ span.naver {
+	display: inline;
+}
+a.daum:hover ~ span.daum {
+	display: inline;
+}
+ */
+</style>
+</head>
+<body>
+	<a href="#" class="naver">네이버</a>
+	<span class="naver">www.naver.com</span>
+	<br>
+	<a href="#" class="daum">다음</a>
+	<span class="daum">www.daum.net</span>
+</body>
+</html>

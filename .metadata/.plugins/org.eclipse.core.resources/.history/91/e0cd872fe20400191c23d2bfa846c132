@@ -1,0 +1,36 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+
+public class memberDAO {
+
+	public int join(memberVO vo) {
+		DBConnection dbconn = new DBConnection();
+		int result = 0;
+		
+		try {
+			String sql = "INSERT INTO member VALUES (?, ?, ?, ?)";
+
+			dbconn.conn = dbconn.getConnection();
+			dbconn.pst = dbconn.conn.prepareStatement(sql);
+			dbconn.pst.setString(1, vo.getId());
+			dbconn.pst.setString(2, vo.getPw());
+			dbconn.pst.setString(3, vo.getNick());
+			dbconn.pst.setString(4, vo.getEmail());
+			
+			result = dbconn.pst.executeUpdate();
+		} catch (SQLIntegrityConstraintViolationException icve) {
+			
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			dbconn.close();
+		}
+		return result;
+	}
+	
+}

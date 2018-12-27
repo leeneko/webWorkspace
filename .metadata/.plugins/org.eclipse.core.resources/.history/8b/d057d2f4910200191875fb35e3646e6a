@@ -1,0 +1,117 @@
+package com.member;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class MemberDAO {
+	
+	private Connection conn;
+	private PreparedStatement pst;
+	private ResultSet rs;
+	
+	private void getConncetion() {
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "system";
+			String password = "1234";
+
+			conn = DriverManager.getConnection(url, user, password);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private void close() {
+		try {
+			if (pst != null) {
+				pst.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+			if (rs != null) {
+				rs.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void join(MemberDTO dto) {
+		getConncetion();
+
+		try {
+			String sql = "insert into web_member values(?,?,?,?)";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, dto.getEmail());
+			pst.setString(2, dto.getPw());
+			pst.setString(3, dto.getTel());
+			pst.setString(4, dto.getAddress());
+
+			pst.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		
+	}
+	
+	public MemberDTO login(MemberDTO dto) {
+		
+		getConncetion();
+		MemberDTO get_dto = new MemberDTO();
+		
+		try {
+		String sql = "select * from web_member where email = ?";
+		pst = conn.prepareStatement(sql);
+		pst.setString(1, dto.getEmail());
+		
+		rs = pst.executeQuery();
+		
+		if(rs.next()) {
+			get_dto.setEmail(rs.getString("email"));
+			get_dto.setPw(rs.getString("pw"));
+			get_dto.setTel(rs.getString("tel"));
+			get_dto.setAddress(rs.getString("address"));
+		} else {
+			
+		}
+		
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return get_dto;
+		
+	}
+
+	public void update(MemberDTO dto) {
+		getConncetion();
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+	}
+
+	
+	
+	
+	
+}

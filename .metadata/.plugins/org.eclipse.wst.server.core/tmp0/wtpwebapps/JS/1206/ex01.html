@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+body {
+	margin: 0px auto;
+}
+
+#viewPort {
+	width: 700px;
+	margin: 0px auto;
+}
+
+img {
+	width: 700px;
+	height: 400px;
+}
+
+#btnGroup {
+	width: 700px;
+	margin: 0px auto;
+}
+
+.btn {
+	width: 50px;
+	height: 50px;
+	border: 0;
+	background-color: gray;
+	color : white;
+	position: absolute;
+	margin-top: 175px;
+	border-radius: 25px;
+}
+
+#btn1 {
+}
+
+#btn2 {
+	margin-left: 650px;
+}
+</style>
+</head>
+<body>
+	<div id="btnGroup">
+		<button class="btn" id="btn1" onclick="pre()"> < </button>
+		<button class="btn" id="btn2" onclick="next()"> > </button>
+	</div>
+	<div id="viewPort">
+		<img id="image" src="img/bgimg1.jpg">
+	</div>
+	<script type="text/javascript">
+		var num = 1;
+		function pre() {
+			if (num > 1) {
+				num--;
+				var temp = document.getElementById("image");
+				temp.src = "img/bgimg" + num + ".jpg";
+			}
+		}
+		function next() {
+			if (num < 5) {
+				num++;
+				var temp = document.getElementById("image");
+				temp.src = "img/bgimg" + num + ".jpg";
+			}
+		}
+	</script>
+</body>
+</html>

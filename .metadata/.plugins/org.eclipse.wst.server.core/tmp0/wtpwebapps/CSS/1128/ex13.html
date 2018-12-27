@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	.div1 {
+		width: 500px;
+		height: 500px;
+	}
+	#red:checked ~ .div1 {
+		background-color: red;
+	}
+	#blue:checked ~ .div1 {
+		background-color: blue;
+	}
+	#green:checked ~ .div1 {
+		background-color: green;
+	}
+</style>
+</head>
+<body>
+	<h1>div색상변경</h1>
+	red<input type="radio" name="color" id="red">
+	blue<input type="radio" name="color" id="blue">
+	green<input type="radio" name="color" id="green">
+	<br>
+	<div class="div1"></div>
+</body>
+</html>

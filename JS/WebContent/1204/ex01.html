@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+p {
+	display: inline;
+}
+</style>
+</head>
+<body>
+	<h1>비행기 티켓 구매하기</h1>
+	<hr color="red">
+	<p>비행기 티켓 개수 : </p><p id="input"></p>
+	<br>
+	<p>비행기 티켓 가격 : </p><p id="result"></p>
+	<script type="text/javascript">
+		var input = 20;
+		var value = 10000;
+		function myFunction(i1, i2) {
+			if (i1 >= 15) {
+				return (i1 * i2) * 0.75;
+			} else {
+				return i1 * i2;
+			}
+		}
+		document.getElementById("input").innerHTML = input;
+		document.getElementById("result").innerHTML = myFunction(input, value);
+	</script>
+</body>
+</html>

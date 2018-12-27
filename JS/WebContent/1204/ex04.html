@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1px solid black">
+		<tr>
+			<td>현재 공의 갯수</td>
+			<td id="ball"></td>
+		</tr>
+		<tr>
+			<td>상자에 들어갈 수 있는 공의 갯수</td>
+			<td id="input"></td>
+		</tr>
+		<tr>
+			<td>현재 공을 담을 수 있는 상자 수</td>
+			<td id="box"></td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+		var b = 33;
+		var i = 5;
+		var box = 0;
+		if ((b / i) > parseInt(b / i)) {
+			box = parseInt(b / i) + 1;
+		} else {
+			box = parseInt(b / i);
+		}
+		/* document.write(b / i); result : 6.6 */
+		/* document.write(parseInt(b / i)); result : 6 */
+		
+		document.getElementById("ball").innerHTML = b;
+		document.getElementById("input").innerHTML = i;
+		document.getElementById("box").innerHTML = box;
+	</script>
+</body>
+</html>

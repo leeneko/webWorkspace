@@ -1,0 +1,20 @@
+package com;
+
+public class FileDTO {
+	private int num;
+	private String writter;
+	private String title;
+	private String content;
+	private String fileName;
+	private String sendate;
+	public FileDTO(int num, String writter, String title, String content, String fileName, String sendate) {
+		super();
+		this.num = num;
+		this.writter = writter;
+		this.title = title;
+		this.content = content;
+		this.fileName = fileName;
+		this.sendate = sendate;
+	}
+	
+}

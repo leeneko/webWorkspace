@@ -1,0 +1,151 @@
+package com.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.member.MemberDAO;
+import com.member.MemberDTO;
+import com.message.MessageDAO;
+import com.message.MessageDTO;
+
+@WebServlet("*.do")
+public class Controller extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("EUC-KR");
+		response.setCharacterEncoding("EUC-KR");
+		
+		String uri = request.getRequestURI();
+		String path = request.getContextPath();
+		String com = uri.substring(path.length() + 1);
+		
+		if(com.equals("Login.do")) {
+			String email = request.getParameter("email");
+			String pw = request.getParameter("pw");
+			
+			MemberDTO dto = new MemberDTO(email, pw);
+			MemberDAO dao = new MemberDAO();
+			MemberDTO get_dto = dao.login(dto);
+			
+			if(get_dto != null) {
+				if (dto.getEmail().equals(get_dto.getEmail())) {
+					HttpSession session = request.getSession();
+					session.setAttribute("email", get_dto.getEmail());
+					session.setAttribute("tel", get_dto.getTel());
+					session.setAttribute("address", get_dto.getAddress());
+					response.sendRedirect("main.jsp");
+				}
+			}else {
+				
+			}
+		} else if (com.equals("Join.do")) {
+			com.Service.JoinService.execute(request, response);
+		} else if (com.equals("Delete.do")) {
+			String email = request.getParameter("email");
+			
+			MemberDAO dao = new MemberDAO();
+			boolean result = dao.deleteMember(email);
+			PrintWriter out = response.getWriter();
+			
+			if (result) {
+				out.print("<script>");
+				out.print("alert('삭제 성공');");
+				out.print("</script>");
+				response.sendRedirect("selectMember.jsp");
+			} else {
+				out.print("<script>");
+				out.print("alert('삭제 실패');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			}
+		} else if (com.equals("Update.do")) {
+			HttpSession session = request.getSession();
+			String email = (String) session.getAttribute("email");
+			String pw = (String) request.getParameter("pw");
+			String tel = (String) request.getParameter("tel");
+			String address = (String) request.getParameter("address");
+			
+			MemberDAO dao = new MemberDAO();
+			MemberDTO dto = new MemberDTO(email, pw, tel, address);
+			int cnt = dao.update(dto);
+			
+			if (cnt > 0) {
+				session.setAttribute("email", dto.getEmail());
+				session.setAttribute("tel", dto.getTel());
+				session.setAttribute("address", dto.getAddress());
+				response.sendRedirect("main.jsp");
+			} else {
+				response.sendRedirect("update.jsp");
+			}
+		} else if (com.equals("Logout.do")) {
+			HttpSession session = request.getSession();
+			session.invalidate();
+			response.sendRedirect("main.jsp");
+		} else if (com.equals("MessageAllDelete.do")) {
+			PrintWriter out = response.getWriter();
+			String email = request.getParameter("email");
+			MessageDAO dao = new MessageDAO();
+			int cnt = dao.messageAllDelete(email);
+			if (cnt > 0) {
+				out.print("<script>");
+				out.print("alert('메세지 삭제 성공');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			} else {
+				out.print("<script>");
+				out.print("alert('메세지 삭제 실패');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			}
+		} else if (com.equals("MessageDelete.do")) {
+			PrintWriter out = response.getWriter();
+			String num = request.getParameter("num");
+			MessageDAO dao = new MessageDAO();
+			boolean result = dao.messageDelete(num);
+			if (result) { // 성공
+				out.print("<script>");
+				out.print("alert('삭제 성공');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			} else { // 실패
+				out.print("<script>");
+				out.print("alert('삭제 실패');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			}
+		} else if (com.equals("MessageSend.do")) {
+			HttpSession session = request.getSession();
+			
+			String name = (String) session.getAttribute("email");
+			String email = request.getParameter("email");
+			String content = request.getParameter("content");
+			
+			MessageDTO dto = new MessageDTO(name, email, content);
+			MessageDAO dao = new MessageDAO();
+			
+			int cnt = dao.sendMessage(dto);
+			PrintWriter out = response.getWriter();
+			if (cnt > 0) {
+				out.print("<script>");
+				out.print("alert('메세지 전송 성공');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			} else {
+				out.print("<script>");
+				out.print("alert('메세지 전송 실패');");
+				out.print("</script>");
+				response.sendRedirect("main.jsp");
+			}
+		}
+	}
+
+}

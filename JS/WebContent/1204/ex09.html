@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var player1 = prompt("플레이어 이름을 입력하세요.", "포치");
+		var player2 = prompt("플레이어 이름을 입력하세요.", "타마");
+		var input1 = prompt(player1 + "님 입력", "가위, 바위, 보");
+		var input2 = prompt(player2 + "님 입력", "가위, 바위, 보");
+		var result = "";
+		if (input1 == input2) {
+			result = "무승부";
+			alert(result);
+		} else if (input1 == "가위" && input2 == "바위") {
+			result = player2 + "님 승리";
+			alert(result);
+		} else if (input1 == "가위" && input2 == "보") {
+			result = player1 + "님 승리";
+			alert(result);
+		} else if (input1 == "바위" && input2 == "가위") {
+			result = player1 + "님 승리";
+			alert(result);
+		} else if (input1 == "바위" && input2 == "보") {
+			result = player2 + "님 승리";
+			alert(result);
+		} else if (input1 == "보" && input2 == "가위") {
+			result = player2 + "님 승리";
+			alert(result);
+		} else if (input1 == "보" && input2 == "바위") {
+			result = player1 + "님 승리";
+			alert(result);
+		}
+		document.write("<p>" + player1 + "님 : " + input1 + "</p>");
+		document.write("<p>" + player2 + "님 : " + input2 + "</p>");
+		document.write("<p>" + result);
+	</script>
+</body>
+</html>

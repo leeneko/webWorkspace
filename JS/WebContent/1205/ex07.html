@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="text">6</h1>
+	<button onclick="plus()">증가</button>
+	<button onclick="miner()">감소</button>
+	<script type="text/javascript">
+		function plus() {
+			document.getElementById("text").innerHTML = parseInt(document
+					.getElementById("text").innerHTML) + 1;
+		}
+
+		function miner() {
+			if (document.getElementById("text").innerHTML > 0) {
+				document.getElementById("text").innerHTML = parseInt(document
+						.getElementById("text").innerHTML) - 1;
+			}
+		}
+	</script>
+</body>
+</html>

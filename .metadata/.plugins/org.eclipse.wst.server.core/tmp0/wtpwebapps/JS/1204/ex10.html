@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var startInput = parseInt(prompt("시작할 숫자를 입력해주세요"));
+		var endInput = parseInt(prompt("끝의 숫자를 입력해주세요"));
+		var result = 0;
+		for (var i = startInput; i <= endInput; i++) {
+			result += i;
+		}
+		document.write("<h1>반복문을 활용한 합계구하기</h1>");
+		document.write(startInput);
+		document.write("부터 ")
+		document.write(endInput);
+		document.write("까지의 합은 ")
+		document.write(result);
+	</script>
+</body>
+</html>
