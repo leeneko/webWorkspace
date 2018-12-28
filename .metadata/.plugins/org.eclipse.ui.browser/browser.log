@@ -767,3 +767,7 @@
 12월 26, 2018 14:30:40.45 [7956:4916:1226/143040.450:ERROR:latency_info.cc(144)] Surface::TakeLatencyInfoFromFrame, LatencyInfo vector size 101 is too big.
 12월 26, 2018 14:30:45.87 [7956:4916:1226/143045.879:ERROR:latency_info.cc(144)] Surface::TakeLatencyInfoFromFrame, LatencyInfo vector size 101 is too big.
 12월 26, 2018 14:30:51.30 [7956:4916:1226/143051.306:ERROR:latency_info.cc(144)] Surface::TakeLatencyInfoFromFrame, LatencyInfo vector size 101 is too big.
+
+12월 27, 2018 14:28:50.34 NEW SESSION
+12월 27, 2018 14:28:50.34 [8684:6932:1227/142850.348:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+12월 27, 2018 14:28:57.04 [9872:2352:1227/142857.041:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED

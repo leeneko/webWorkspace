@@ -13,6 +13,8 @@ D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\551283832.
 \CookieSession\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1342055493.index
 \Project\src
+D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1005283527.index
+\JS\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2286319862.index
 \JSTL\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3418011592.index

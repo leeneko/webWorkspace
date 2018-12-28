@@ -24,23 +24,22 @@
       
       FileDAO dao = new FileDAO();
       FileDTO dto = dao.select(cnum);
-   
+      pageContext.setAttribute("dto", dto);
    %>
    <table border="1px solid black" align="center">
-      <tr>
-         <td>제목</td>
-         <td><%=dto.getTitle() %></td>
-         <td>작성자</td>
-         <td><%=dto.getWritter() %></td>      
-      </tr>
-      <tr>
-         <td>내용</td>
-         <td colspan="3"><%=dto.getContent() %></td>
-      </tr>
-      <tr>
-         <td colspan="4"><img alt="사진이 없습니다." src="file/<%=dto.getFileName() %>"></td>
-      
-      </tr>
-   </table>
+		<tr>
+			<td>제목</td>
+			<td>${ dto.title }</td>
+			<td>작성자</td>
+			<td>${ dto.writter }</td>
+		</tr>
+		<tr>
+			<td>내용</td>
+			<td colspan="3">${ dto.content }</td>
+		</tr>
+		<tr>
+			<td colspan="4"><img alt="사진이 없습니다." src="file/${ dto.fileName }"></td>
+		</tr>
+	</table>
 </body>
 </html>
