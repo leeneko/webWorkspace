@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var nums = [ 51, 32, 8, 1, 48, 98, 4, 7];
+		
+		var min = nums[0];
+		var max = nums[0];
+		
+		for (var i = 1; i < nums.length; i++) {
+			if (min > nums[i])
+				min = nums[i];
+			if (max < nums[i])
+				max = nums[i];
+		}
+		
+		alert("가장 큰 수 : " + max + ", 가장 작은 수 : " + min);
+	</script>
+</body>
+</html>

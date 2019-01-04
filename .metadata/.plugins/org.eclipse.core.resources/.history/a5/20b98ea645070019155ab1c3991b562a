@@ -1,6 +1,0 @@
-CREATE TABLE testBoard (
-	num NUMBER,
-	sysdate date
-)
-
-CREATE sequence my start with 1 increment by 1;

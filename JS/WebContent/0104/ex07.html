@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var kg = prompt("몸무게(단위 : kg)");
+		var cm = prompt("키(단위 : cm)");
+		
+		alert(bmiCheck(kg, cm));
+		
+		function bmiCheck(kg, cm) {
+			var m = cm / 100;
+			var bmi = kg / (m*m);
+			var rank = "";
+			if (bmi <= 18.4) {
+				rank = "저체중";
+			} else if (bmi <= 22.9) {
+				rank = "정상";
+			} else if (bmi <= 24.9) {
+				rank = "과체중";
+			} else if (bmi <= 29.9) {
+				rank = "비만";
+			} else {
+				rank = "고도비만";
+			}
+			return "당신의 BMI 지수는 " + bmi + " " + rank + "입니다.";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ];
+		var str = "";
+		var cnt = 0;
+
+		for (var i = 0; i < numbers.length; i++) {
+			if (numbers[i] % 2 == 0) {
+				str += numbers[i] + " ";
+				cnt++;
+			}
+		}
+
+		alert("짝수는 " + str + "이고 총 " + cnt + "개 입니다.");
+		// 짝수는 2 4 6 8 10 12 14 이고 총 7개 입니다.
+	</script>
+</body>
+</html>

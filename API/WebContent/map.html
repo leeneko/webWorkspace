@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Daum 지도</title>
+</head>
+<body>
+	<div id="map" style="width: 500px; height: 400px;"></div>
+	
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fd517f4aaa620b11b34ca0f8da672dd7"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center : new daum.maps.LatLng(35.15176061608078, 126.76750557213673),
+			level : 3
+		};
+
+		var map = new daum.maps.Map(container, options);
+		var mapTypeControl = new daum.maps.MapTypeControl();
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+		var zoomControl = new daum.maps.ZoomControl();
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+	</script>
+</body>
+</html>

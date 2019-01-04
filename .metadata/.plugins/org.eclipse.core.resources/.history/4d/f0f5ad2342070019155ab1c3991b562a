@@ -1,8 +1,0 @@
-package com;
-
-public class FileDTO {
-	private int num;
-	private String writter;
-	private String title;
-	
-}

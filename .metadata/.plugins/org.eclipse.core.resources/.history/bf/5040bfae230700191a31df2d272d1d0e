@@ -1,5 +1,0 @@
-package com.Service;
-
-public class MessageAllDelete implements com.inter.Command {
-
-}

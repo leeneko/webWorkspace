@@ -1,4 +1,0 @@
-CREATE TABLE testBoard (
-	num NUMBER,
-	day date
-)
