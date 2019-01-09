@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" id="pw"></td>
+		</tr>
+		<tr>
+			<td>비밀번호 확인</td>
+			<td><input type="password" id="pwChk"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button onclick="checkPw()">확인</button></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function checkPw() {
+			var pw = document.getElementById("pw").value;
+			var pwChk = document.getElementById("pwChk").value;
+			if (pw == pwChk) {
+				alert("일치");
+			} else {
+				alert("불일치");
+			}
+		}
+	</script>
+</body>
+</html>

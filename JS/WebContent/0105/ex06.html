@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="radio" name="rd" value="라디오버튼1">
+	<input type="radio" name="rd" value="라디오버튼2">
+	<button onclick="rdChecked()">클릭</button>
+	<script type="text/javascript">
+		function rdChecked() {
+			var radio = document.getElementsByName("rd");
+			if (radio[0].checked) {
+				alert(radio[0].value);
+			} else if (radio[1].checked) {
+				alert(radio[1].value);
+			} else {
+				alert("선택해주세요.");
+			}
+		}
+	</script>
+</body>
+</html>

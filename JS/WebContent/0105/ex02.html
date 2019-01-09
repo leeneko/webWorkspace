@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="text">6</h1>
+	<button onclick="add()">증가</button>
+	<button onclick="min()">감소</button>
+	<script type="text/javascript">
+		var t = parseInt(document.getElementById("text").innerHTML);
+		function add() {
+			document.getElementById("text").innerHTML = ++t;
+		}
+		function min() {
+			if (t != 0)
+				document.getElementById("text").innerHTML = --t;
+		}
+	</script>
+</body>
+</html>

@@ -40,7 +40,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="login" method="post" role="form" style="display: block;">
+								<form id="login-form" name="loginForm" action="login" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
@@ -70,7 +70,7 @@
 								</form>
 								<form id="register-form" name="joinForm" action="join" method="post" role="form" style="display: none;" onsubmit="return check();">
 									<div class="form-group" align="center">
-										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="Username" maxlength="12" onkeydown="inputIdChk()" onkeyup="idChk()">
+										<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="Username" maxlength="12" onfocus="inputIdChk()" onblur="idChk()">
 										<p id="chk" style="color: red;"></p>
 										<input type="hidden" name="idDuplication" value="idUncheck">
 									</div>
@@ -102,13 +102,7 @@
 			</div>
 		</div>
 		
-<script>
-function idChk() {
-	document.getElementById("chk").innerHTML = "아이디 중복";
-	
-}
-
-$(function() {
+<script>$(function() {
 	$('#login-form-link').click(function(e) {
 		$("#login-form").delay(100).fadeIn(100);
 		$("#register-form").fadeOut(100);
@@ -173,8 +167,58 @@ function check() {
 	
 }
 
+var httpRequest = null;
+// httpRequest 객체 생성
+function getXMLHttpRequest(){
+    var httpRequest = null;
+
+    if(window.ActiveXObject){
+        try{
+            httpRequest = new ActiveXObject("Msxml2.XMLHTTP");    
+        } catch(e) {
+            try{
+                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e2) { httpRequest = null; }
+        }
+    }
+    else if(window.XMLHttpRequest){
+        httpRequest = new window.XMLHttpRequest();
+    }
+    return httpRequest;    
+}
+
+function idChk() {
+	// document.joinForm.chk.innerHTML = "아이디 중복";
+	var id = document.joinForm.id.value;
+	if (!document.joinForm.id.value.match(idRules)) {
+		document.getElementById("chk").innerHTML = "4글자 이상, 12글자 이하, 영문, 숫자로 아이디를 입력해주세요.";
+		document.joinForm.id.focus();
+	} else {
+		var param = "id=" + id;
+		httpRequest = getXMLHttpRequest();
+		httpRequest.onreadystatechange = callback;
+		httpRequest.open("POST", "MemberIdCheckAction.do", true);
+		httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		httpRequest.send(param);
+	}
+}
+
+function callback() {
+	if(httpRequest.readyState == 4){
+        // 결과 값을 가져온다.
+        var resultText = httpRequest.responseText;
+        if(resultText == 0){
+        	document.getElementById("chk").innerHTML = "중복된 아이디가 있습니다. 사용이 불가능합니다.";
+        } 
+        else if(resultText == 1){ 
+            document.getElementById("chk").innerHTML = "사용 가능한 아이디입니다.";
+            document.joinForm.idDublication.value = "idCheck";
+        }
+    }
+}
+
 function inputIdChk() {
-	document.joinForm.idDublication.value = "idUncheck";
+	document.joinForm.idDublication.innerHTML = "idUncheck";
 }
 </script>
 		

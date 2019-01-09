@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<button onclick="mapSel(1)">버튼 1</button>
+<button onclick="mapSel(2)">버튼 2</button>
+<button onclick="mapSel(3)">버튼 3</button>
+<script type="text/javascript">
+	function mapSel(i) {
+		alert(i);
+	}
+</script>
+<br><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<button onclick="st()">정렬</button>
+<script type="text/javascript">
+	function st() {
+		var score = document.getElementsByTagName("input");
+		var list = [score[0].value, score[1].value, score[2].value, score[3].value];
+		
+		list.sort();
+		
+//		list.sort(function(a, b) {
+//			return a - b;
+//		}); // 오름차순
+		
+//		list.sort(function(a, b) {
+//			return b - a;
+//		}); // 내림차순
+		
+		for (var i = 0; i < list.length; i++) {
+			alert(list[i]);
+		}
+		/* score.sort(function(a, b) {
+			return a - b;
+		});
+		for (var i = 0; i < score.length; i++) {
+			alert(score[i].value);
+		} */
+	}
+</script>
+</body>
+</html>

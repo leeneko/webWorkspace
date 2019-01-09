@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" name="food"><br>
+	<input type="text" name="food"><br>
+	<input type="text" name="food"><br>
+	<button onclick="check()">확인</button>
+	<script type="text/javascript">
+		function check() {
+			var str = "";
+			var list = document.getElementsByName("food");
+			for (var i = 0; i < list.length; i++) {
+				str += list[i].value + " ";
+			}
+			alert(str);
+		}
+	</script>
+</body>
+</html>

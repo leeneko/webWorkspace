@@ -777,3 +777,16 @@
 1월 03, 2019 15:17:50.39 [1172:3860:0103/151750.398:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
 1월 03, 2019 15:21:22.55 [13136:9764:0103/152122.550:ERROR:textfield.cc(1777)] NOT IMPLEMENTED
 1월 03, 2019 15:21:27.24 [13136:9764:0103/152127.243:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+
+1월 07, 2019 18:05:22.01 NEW SESSION
+1월 07, 2019 18:05:22.01 [2676:6252:0107/180522.012:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+1월 07, 2019 18:05:22.06 [2676:8132:0107/180522.064:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.07 [2676:8132:0107/180522.064:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.07 [2676:8132:0107/180522.064:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.08 [2676:8132:0107/180522.064:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.08 [2676:8132:0107/180522.065:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.09 [2676:8132:0107/180522.065:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.09 [2676:8132:0107/180522.065:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.09 [2676:8132:0107/180522.066:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.10 [2676:8132:0107/180522.067:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+1월 07, 2019 18:05:22.10 [2676:8132:0107/180522.067:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe

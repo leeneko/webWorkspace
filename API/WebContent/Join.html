@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- POST방식, 전송할 페이지는 프런트컨트롤러, 보내기 전에 확인할 checkValue() -->
+<form action="Join.do" method="post" onsubmit="checkValue()">
+<table>
+	<tr>
+		<td>ID : </td>
+		<td>
+			<input type="text" name="id" maxlength="12" onkeydown="inputIdChk()">
+			<input type="button" value="중복확인" onclick="openIdChk()">
+		</td>
+		<input type="hidden" name="idDuplication" value="idUncheck">
+	</tr>
+	<tr>
+		<td>PW : </td>
+		<td><input type="password" name="pw"></td>
+	</tr>
+	<tr align="center">
+		<td colspan="2"><input type="submit" value="가입"></td>
+	</tr>
+</table>
+<script type="text/javascript">
+	function openIdChk() {
+		window.name = "parentForm";
+		window.open("member/IdCheckForm.jsp", "chkForm",
+				"width=500, height=300, resizable=no, scrollbars=no");
+	}
+</script>
+</form>
+</body>
+</html>

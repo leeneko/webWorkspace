@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<img src="../img/cat.jpg">
+	<button onclick="change()">변경</button>
+	<script type="text/javascript">
+		function change() {
+			var img = document.getElementsByTagName("img");
+			/* img[0].src = "../img/kupa.jpg"; */
+			img[0].setAttribute("src", "../img/kupa.jpg");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<span id="text">버튼클릭</span>을 클릭하면 글자가 바뀝니다.
+	<button onclick="Change()">버튼</button>
+	<script type="text/javascript">
+		function Change() {
+			var t = document.getElementById("text");
+			t.innerHTML = "환영합니다";
+		}
+	</script>
+</body>
+</html>
