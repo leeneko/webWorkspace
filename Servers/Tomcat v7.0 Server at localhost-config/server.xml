@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8010" shutdown="SHUTDOWN">
+ --><Server port="8005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -62,7 +62,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL HTTP/1.1 Connector on port 8080
     -->
-    <Connector URIEncoding="EUC-KR" URLEncoding="EUC-KR" connectionTimeout="20000" port="8085" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -82,7 +82,7 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="8014" protocol="AJP/1.3" redirectPort="8443"/>
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443"/>
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes
@@ -126,7 +126,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="HTML" path="/HTML" reloadable="true" source="org.eclipse.jst.jee.server:HTML"/><Context docBase="CSS" path="/CSS" reloadable="true" source="org.eclipse.jst.jee.server:CSS"/><Context docBase="Project" path="/Project" reloadable="true" source="org.eclipse.jst.jee.server:Project"/><Context docBase="JS" path="/JS" reloadable="true" source="org.eclipse.jst.jee.server:JS"/><Context docBase="JSP" path="/JSP" reloadable="true" source="org.eclipse.jst.jee.server:JSP"/><Context docBase="CookieSession" path="/CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:CookieSession"/><Context docBase="Scope" path="/Scope" reloadable="true" source="org.eclipse.jst.jee.server:Scope"/><Context docBase="WebTest" path="/WebTest" reloadable="true" source="org.eclipse.jst.jee.server:WebTest"/><Context docBase="MessageSystem" path="/MessageSystem" reloadable="true" source="org.eclipse.jst.jee.server:MessageSystem"/><Context docBase="EL" path="/EL" reloadable="true" source="org.eclipse.jst.jee.server:EL"/><Context docBase="JSTL" path="/JSTL" reloadable="true" source="org.eclipse.jst.jee.server:JSTL"/><Context docBase="FileUpload" path="/FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:FileUpload"/><Context docBase="API" path="/API" reloadable="true" source="org.eclipse.jst.jee.server:API"/><Context docBase="WebTest2" path="/WebTest2" reloadable="true" source="org.eclipse.jst.jee.server:WebTest2"/><Context docBase="Question5" path="/Question5" reloadable="true" source="org.eclipse.jst.jee.server:Question5"/></Host>
+      <Context docBase="HTML" path="/HTML" reloadable="true" source="org.eclipse.jst.jee.server:HTML"/><Context docBase="EL" path="/EL" reloadable="true" source="org.eclipse.jst.jee.server:EL"/><Context docBase="API" path="/API" reloadable="true" source="org.eclipse.jst.jee.server:API"/><Context docBase="JS" path="/JS" reloadable="true" source="org.eclipse.jst.jee.server:JS"/><Context docBase="MessageSystem" path="/MessageSystem" reloadable="true" source="org.eclipse.jst.jee.server:MessageSystem"/><Context docBase="JSTL" path="/JSTL" reloadable="true" source="org.eclipse.jst.jee.server:JSTL"/><Context docBase="Project" path="/Project" reloadable="true" source="org.eclipse.jst.jee.server:Project"/><Context docBase="CSS" path="/CSS" reloadable="true" source="org.eclipse.jst.jee.server:CSS"/><Context docBase="EOA" path="/EOA" reloadable="true" source="org.eclipse.jst.jee.server:EOA"/><Context docBase="JSP" path="/JSP" reloadable="true" source="org.eclipse.jst.jee.server:JSP"/><Context docBase="Scope" path="/Scope" reloadable="true" source="org.eclipse.jst.jee.server:Scope"/><Context docBase="CookieSession" path="/CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:CookieSession"/><Context docBase="FileUpload" path="/FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:FileUpload"/><Context docBase="GSGS" path="/GSGS" reloadable="false" source="org.eclipse.jst.jee.server:GSGS"/></Host>
     </Engine>
   </Service>
 </Server>

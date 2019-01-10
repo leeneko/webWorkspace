@@ -23,5 +23,4 @@ public class JoinService extends HttpServlet {
 			response.sendRedirect("join.html");
 		}
 	}
-
 }

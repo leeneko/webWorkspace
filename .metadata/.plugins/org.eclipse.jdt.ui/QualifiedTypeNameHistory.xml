@@ -17,7 +17,6 @@
 <fullyQualifiedTypeName name="javax.smartcardio.ResponseAPDU"/>
 <fullyQualifiedTypeName name="com.Service.UpdateService"/>
 <fullyQualifiedTypeName name="com.Service.MessageAllDelete"/>
-<fullyQualifiedTypeName name="com.inter.Command"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
 <fullyQualifiedTypeName name="com.InfoDTO"/>
@@ -29,7 +28,6 @@
 <fullyQualifiedTypeName name="javax.websocket.Session"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="sun.rmi.server.Dispatcher"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
@@ -37,4 +35,6 @@
 <fullyQualifiedTypeName name="com.Command"/>
 <fullyQualifiedTypeName name="DAO.memberDAO"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.inter.Command"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 </qualifiedTypeNameHistroy>
