@@ -11,8 +11,8 @@ public class Login implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
-		response.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");

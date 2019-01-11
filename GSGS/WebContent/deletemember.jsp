@@ -22,7 +22,7 @@
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/layer.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #212529;">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="index.jsp">개랑후라이</a>
@@ -111,7 +111,38 @@
 	        </div>
 	    </div>
 	</div>
-	
+	<!-- member delete form -->
+	<div style="background-color: #212529;">
+		<header class="masthead">
+			<div class="container">
+				<div class="intro-text">
+					<div class="intro-lead-in"></div>
+					<div class="intro-heading text-uppercase">회원탈퇴</div>
+				</div>
+			</div>
+		</header>
+		<section id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div>
+							<h2 style="color: white;">${sessionScope.memberdto.member_name }님인지 다시 확인하기 위해 비밀번호를 입력해주세요</h2>
+							<form id="member-delete-form" name="memberDeleteForm" action="delete.dog" method="post" role="form">
+								<div class="form-group" align="center">
+									<input type="password" name="pw" id="pw" class="form-control" placeholder="비밀번호 확인" maxlength="16">
+								</div>
+								<div class="form-group" align="center">
+									<input type="submit" name="member-delete-submit" id="member-delete-submit" style="background-color: #fec810; color: white;
+										font-size: 18px; padding: 20px 40px; border-radius: .25rem; line-height: 1.5;
+										border: 1px solid transparent; box-sizing: border-box;" value="회원 삭제">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

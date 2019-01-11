@@ -110,4 +110,43 @@ public class MemberDAO {
 		return dto;
 	}
 
+	public int delete(String sessionId, String pwConfirm) {
+		int cnt = 0;
+		getConnection();
+		try {
+			// DELETE dog_member WHERE member_email='user@user.user' AND member_pw='!Q2w3e4r'
+			String sql = "DELETE dog_member WHERE member_email=? AND member_pw=?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, sessionId);
+			pst.setString(2, pwConfirm);
+			cnt = pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
+	public int edit(MemberDTO dto) {
+		int cnt = 0;
+		getConnection();
+		try {
+			//UPDATE dog_member SET member_pw='1q2w3e$R', member_tel='010-1111-1234', member_name='유저', member_addr='변경될 주소' WHERE member_email='user@user.user'
+			String sql = "UPDATE dog_member SET member_pw=?, member_tel=?, member_name=?, member_addr=? WHERE member_email=?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, dto.getMember_pw());
+			pst.setString(2, dto.getMember_tel());
+			pst.setString(3, dto.getMember_name());
+			pst.setString(4, dto.getMember_addr());
+			pst.setString(5, dto.getMember_email());
+			cnt = pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
 }

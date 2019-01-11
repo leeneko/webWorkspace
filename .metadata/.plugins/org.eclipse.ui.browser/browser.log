@@ -790,3 +790,48 @@
 1월 07, 2019 18:05:22.09 [2676:8132:0107/180522.066:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
 1월 07, 2019 18:05:22.10 [2676:8132:0107/180522.067:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
 1월 07, 2019 18:05:22.10 [2676:8132:0107/180522.067:ERROR:service_manager_context.cc(279)] Attempting to run unsupported native service: C:\Program Files (x86)\Google\Chrome\Application\71.0.3578.98\content_browser.service.exe
+
+1월 11, 2019 10:30:50.67 NEW SESSION
+1월 11, 2019 10:30:50.67 [6176:9388:0111/103050.663:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+1월 11, 2019 10:31:57.91 [3572:16060:0111/103157.916:ERROR:textfield.cc(1777)] NOT IMPLEMENTED
+1월 11, 2019 11:04:31.85 [3572:16060:0111/110431.849:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+1월 11, 2019 11:13:59.24 [1864:11696:0111/111359.248:ERROR:http_bridge.cc(126)] NOT IMPLEMENTED
+1월 11, 2019 11:16:53.59 [6996:10556:0111/111653.595:ERROR:textfield.cc(1777)] NOT IMPLEMENTED
+1월 11, 2019 14:12:47.67 [6996:16540:0111/141247.671:ERROR:ssl_client_socket_impl.cc(1013)] handshake failed; returned -1, SSL error code 1, net_error -101
+1월 11, 2019 14:34:42.87 [6996:10556:0111/143442.878:ERROR:CONSOLE(970)] "TypeError: Cannot read property 'pseudoType' of undefined TypeError: Cannot read property 'pseudoType' of undefined
+1월 11, 2019 14:34:42.88     at SDK.DOMNode._removeChild (chrome-devtools://devtools/bundled/shell.js:4303:28)
+1월 11, 2019 14:34:42.89     at SDK.DOMModel._childNodeRemoved (chrome-devtools://devtools/bundled/shell.js:4422:121)
+1월 11, 2019 14:34:42.90     at SDK.DOMDispatcher.childNodeRemoved (chrome-devtools://devtools/bundled/shell.js:4465:54)
+1월 11, 2019 14:34:42.90     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3402:26)
+1월 11, 2019 14:34:42.91     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3353:31)
+1월 11, 2019 14:34:42.91     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3490:41)
+1월 11, 2019 14:34:42.92     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:490:23)
+1월 11, 2019 14:34:42.93     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:970:98)
+1월 11, 2019 14:34:42.93     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:970:1)
+1월 11, 2019 14:34:42.94     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)", source: chrome-devtools://devtools/bundled/shell.js (970)
+1월 11, 2019 14:35:01.81 [6996:10556:0111/143501.813:ERROR:CONSOLE(970)] "TypeError: Cannot read property 'pseudoType' of undefined TypeError: Cannot read property 'pseudoType' of undefined
+1월 11, 2019 14:35:01.83     at SDK.DOMNode._removeChild (chrome-devtools://devtools/bundled/shell.js:4303:28)
+1월 11, 2019 14:35:01.83     at SDK.DOMModel._childNodeRemoved (chrome-devtools://devtools/bundled/shell.js:4422:121)
+1월 11, 2019 14:35:01.85     at SDK.DOMDispatcher.childNodeRemoved (chrome-devtools://devtools/bundled/shell.js:4465:54)
+1월 11, 2019 14:35:01.85     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3402:26)
+1월 11, 2019 14:35:01.86     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3353:31)
+1월 11, 2019 14:35:01.87     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3490:41)
+1월 11, 2019 14:35:01.87     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:490:23)
+1월 11, 2019 14:35:01.88     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:970:98)
+1월 11, 2019 14:35:01.88     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:970:1)
+1월 11, 2019 14:35:01.89     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)", source: chrome-devtools://devtools/bundled/shell.js (970)
+1월 11, 2019 14:35:01.89 [6996:10556:0111/143501.813:ERROR:CONSOLE(970)] "TypeError: Cannot read property 'pseudoType' of undefined TypeError: Cannot read property 'pseudoType' of undefined
+1월 11, 2019 14:35:01.90     at SDK.DOMNode._removeChild (chrome-devtools://devtools/bundled/shell.js:4303:28)
+1월 11, 2019 14:35:01.91     at SDK.DOMModel._childNodeRemoved (chrome-devtools://devtools/bundled/shell.js:4422:121)
+1월 11, 2019 14:35:01.91     at SDK.DOMDispatcher.childNodeRemoved (chrome-devtools://devtools/bundled/shell.js:4465:54)
+1월 11, 2019 14:35:01.92     at Protocol.InspectorBackend._DispatcherPrototype.dispatch (chrome-devtools://devtools/bundled/shell.js:3402:26)
+1월 11, 2019 14:35:01.93     at SDK.Target._onMessage (chrome-devtools://devtools/bundled/shell.js:3353:31)
+1월 11, 2019 14:35:01.94     at SDK.MainConnection._dispatchMessage (chrome-devtools://devtools/bundled/shell.js:3490:41)
+1월 11, 2019 14:35:01.94     at Common.Object.dispatchEventToListeners (chrome-devtools://devtools/bundled/shell.js:490:23)
+1월 11, 2019 14:35:01.95     at innerDispatch (chrome-devtools://devtools/bundled/shell.js:970:98)
+1월 11, 2019 14:35:01.96     at Host.InspectorFrontendAPIImpl._dispatch (chrome-devtools://devtools/bundled/shell.js:970:1)
+1월 11, 2019 14:35:01.96     at DevToolsAPIImpl._dispatchOnInspectorFrontendAPI (chrome-devtools://devtools/bundled/devtools_compatibility.js:57:36)", source: chrome-devtools://devtools/bundled/shell.js (970)
+1월 11, 2019 14:45:21.50 [6996:10556:0111/144521.502:ERROR:latency_info.cc(144)] Surface::TakeLatencyInfoFromFrame, LatencyInfo vector size 101 is too big.
+1월 11, 2019 15:23:39.11 [6996:16540:0111/152339.119:ERROR:ssl_client_socket_impl.cc(1013)] handshake failed; returned -1, SSL error code 1, net_error -100
+1월 11, 2019 16:21:04.96 [6996:16540:0111/162104.960:ERROR:ssl_client_socket_impl.cc(1013)] handshake failed; returned -1, SSL error code 1, net_error -101
+1월 11, 2019 17:04:05.55 [6996:16540:0111/170405.550:ERROR:connection_factory_impl.cc(408)] Failed to connect to MCS endpoint with error -106

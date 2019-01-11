@@ -22,7 +22,7 @@
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/layer.css" rel="stylesheet">
 </head>
-<body>
+<body id="page-top">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="index.jsp">개랑후라이</a>
@@ -38,81 +38,59 @@
 						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
 						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
 					-->
-					<li class="nav-item">
-					<c:choose>
-						<c:when test="${sessionScope.memberdto == null }">
-							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인 / 회원가입</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" href="logout.dog">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="delete.jsp">회원탈퇴</a></li>
-						</c:otherwise>
-					</c:choose>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="logout.dog">로그아웃</a></li>
+					<li class="nav-item"><a class="nav-link" href="deletemember.jsp">회원탈퇴</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="dim-layer">
-	    <div class="dimBg"></div>
-	    <div id="loginlayer" class="pop-layer">
-	        <div class="pop-container">
-	            <div class="pop-conts">
-	                <!--content //-->
-	                <table width="100%">
-	                	<tr align="center">
-	                		<td><a href="#" id="login-form-link">로그인</a></td>
-	                		<td><a href="#" id="register-form-link">회원가입</a></td>
-	                	</tr>
-	                </table>
-	                <hr>
-	                <form id="login-form" name="loginForm" action="login.dog" method="post" role="form" style="display: block;">
-						<div class="form-group">
-							<input type="text" name="id" id="username" tabindex="1" class="form-control" placeholder="이메일">
-						</div>
-						<div class="form-group">
-							<input type="password" name="pw" id="password" tabindex="1" class="form-control" placeholder="비밀번호">
-						</div>
-						<div class="form-group">
-							<input type="submit" name="login-submit" id="login-submit" tabindex="1" class="btn btn-primary" value="Log In">
-						</div>
-					</form>
-	                <form id="register-form" name="joinForm" action="join.dog" method="post" role="form" style="display: none;" onsubmit="return check();">
-						<div class="form-group" align="center">
-							<input type="text" name="email" id="email" tabindex="2" class="form-control" placeholder="이메일" maxlength="50" onfocus="inputIdChk()" onblur="idChk()">
-							<p id="chk" style="color: red;"></p>
-							<input type="hidden" id="idDuplication" value="idUncheck">
-						</div>
-						<div class="form-group">
-							<input type="password" name="pw" id="pw" tabindex="2" class="form-control" placeholder="비밀번호" maxlength="16">
-						</div>
-						<div class="form-group">
-							<input type="password" name="cpw" id="cpw" tabindex="2" class="form-control" placeholder="비밀번호 확인" maxlength="16" onblur="pwCpw()">
-							<p id="pwchk" style="color: red;"></p>
-						</div>
-						<div class="form-group">
-							<input type="text" name="name" id="name" tabindex="2" class="form-control" placeholder="이름">
-						</div>
-						<div class="form-group">
-							<input type="tel" name="tel" id="tel" tabindex="2" class="form-control" placeholder="010-0000-0000"> 
-						</div>
-						<div class="form-group">
-							<input type="text" name="addr" id="addr" tabindex="2" class="form-control" placeholder="주소" maxlength="50">
-						</div>
-						<div class="form-group">
-							<input type="submit" name="register-submit" id="register-submit" tabindex="2" class="btn btn-primary" value="Register Now">
-						</div>
-					</form>
-	                <div class="btn-r">
-	                    <a href="#" class="btn-layerClose">Close</a>
-	                </div>
-	                <!--// content-->
-	            </div>
-	        </div>
-	    </div>
-	</div>
 	
-	<!-- member edit table -->
+	<!-- member edit form -->
+	<div style="background-color: #212529;">
+		<header class="masthead">
+			<div class="container">
+				<div class="intro-text">
+					<div class="intro-lead-in"></div>
+					<div class="intro-heading text-uppercase">회원 정보 수정</div>
+				</div>
+			</div>
+		</header>
+		<section id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div>
+							<form id="edit-member-form" name="joinForm" action="edit.dog" method="post" role="form" onsubmit="return check();">
+								<div class="form-group" align="center">
+									<input type="text" name="email" id="email" tabindex="2" class="form-control" placeholder="이메일" maxlength="50" value="${sessionScope.memberdto.member_email }" disabled>
+									<input type="hidden" id="idDuplication" value="idCheck">
+								</div>
+								<div class="form-group">
+									<input type="password" name="pw" id="pw" tabindex="2" class="form-control" placeholder="비밀번호" maxlength="16">
+								</div>
+								<div class="form-group">
+									<input type="password" name="cpw" id="cpw" tabindex="2" class="form-control" placeholder="비밀번호 확인" maxlength="16" onblur="pwCpw()">
+									<p id="pwchk" style="color: red;"></p>
+								</div>
+								<div class="form-group">
+									<input type="tel" name="tel" id="tel" tabindex="2" class="form-control" placeholder="010-0000-0000" value="${sessionScope.memberdto.member_tel }"> 
+								</div>
+								<div class="form-group">
+									<input type="text" name="name" id="name" tabindex="2" class="form-control" placeholder="이름" value="${sessionScope.memberdto.member_name }">
+								</div>
+								<div class="form-group">
+									<input type="text" name="addr" id="addr" tabindex="2" class="form-control" placeholder="주소" maxlength="50"  value="${sessionScope.memberdto.member_addr }">
+								</div>
+								<div class="form-group">
+									<input type="submit" name="register-submit" id="register-submit" tabindex="2" class="btn btn-primary" value="Register Now">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 	
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>

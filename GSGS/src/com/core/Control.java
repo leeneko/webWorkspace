@@ -18,8 +18,9 @@ public class Control extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
+		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 		
 		String uri = request.getRequestURI();
@@ -54,9 +55,32 @@ public class Control extends HttpServlet {
 			}
 		}
 		if (com.equals("logout.dog")) {
-			HttpSession session = request.getSession();
 			session.invalidate();
 			nextPage = "index.jsp";
+		}
+		if (com.equals("delete.dog")) {
+			Command delete = new Delete();
+			String result = delete.execute(request, response);
+			if (result.equals("s")) {
+				session.invalidate();
+				out.println("<script>alert('회원 탈퇴에 성공했습니다.'); location.href='index.jsp';</script>");
+				out.flush();
+			} else {
+				out.println("<script>alert('회원 탈퇴에 실패했습니다. 비밀번호를 확인해주세요.'); location.href='deletemember.jsp';</script>");
+				out.flush();
+			}
+		}
+		if (com.equals("edit.dog")) {
+			Command edit = new Edit();
+			String result = edit.execute(request, response);
+			if (result.equals("s")) {
+				session.invalidate();
+				out.println("<script>alert('회원 정보 수정에 성공했습니다.'); location.href='index.jsp';</script>");
+				out.flush();
+			} else {
+				out.println("<script>alert('회원 정보 수정에 실패했습니다.'); location.href='editmember.jsp';</script>");
+				out.flush();
+			}
 		}
 		
 		RequestDispatcher dis = request.getRequestDispatcher(nextPage);

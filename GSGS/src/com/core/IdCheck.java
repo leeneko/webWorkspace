@@ -13,12 +13,12 @@ public class IdCheck implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
-		response.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
 		MemberDAO dao = new MemberDAO();
 		boolean result = dao.duplicateEmail(email);
-		response.setContentType("text/html;charset=euc-kr");
+		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		if(result) { out.print("0"); }
 		else { out.print("1"); }

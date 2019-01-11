@@ -145,3 +145,13 @@ function idChk() {
 		httpRequest.send(param);
 	}
 }
+
+$("#allBoard tr").click(function(){
+	var str = "";
+	var tdArr = new Array(); // 배열
+	// 현재 클릭된 Row(<tr>)
+	var tr = $(this);
+	var td = tr.children();
+	// tr.text()는 클릭된 Row 즉, tr에 있는 모든 값을 가져온다.
+	
+});

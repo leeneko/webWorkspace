@@ -13,14 +13,14 @@ public class Join implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
-		response.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
+		String name = request.getParameter("name");
 		String addr = request.getParameter("addr");
-		MemberDTO dto = new MemberDTO(email, pw, name, tel, addr);
+		MemberDTO dto = new MemberDTO(email, pw, tel, name, addr);
 		MemberDAO dao = new MemberDAO();
 		boolean result = dao.join(dto);
 		if (result) {
