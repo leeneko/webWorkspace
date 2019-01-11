@@ -26,7 +26,8 @@ public class Controller extends HttpServlet {
 		if(com.equals("Logout.do")) {
 			HttpSession session = request.getSession();
 			session.invalidate();
-		} if (com.equals("MemberIdCheckAction.do")) {
+		}
+		if (com.equals("MemberIdCheckAction.do")) {
 			Command idCheck = new IdCheck();
 			idCheck.execute(request, response);
 		}

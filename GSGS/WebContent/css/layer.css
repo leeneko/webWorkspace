@@ -53,6 +53,7 @@
 
 .dim-layer .pop-layer {
   display: block;
+  background-color: #212529;
 }
 
 a.btn-layerClose {
@@ -70,4 +71,9 @@ a.btn-layerClose:hover {
   border: 1px solid #091940;
   background-color: #1f326a;
   color: #fff;
+}
+
+.lj-form {
+	width: 100%;
+	height: 40px;
 }
