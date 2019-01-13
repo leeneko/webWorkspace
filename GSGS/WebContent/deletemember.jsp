@@ -25,29 +25,29 @@
 <body style="background-color: #212529;">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="index.jsp">개랑후라이</a>
+			<a class="navbar-brand js-scroll-trigger" href="index.jsp"><img src="img/logo.png"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				Menu <i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">게시판</a></li>
-					<!--
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-					-->
-					<li class="nav-item">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">분양등록</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">반려견 매칭</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="map.jsp">보호소</a></li>
 					<c:choose>
 						<c:when test="${sessionScope.memberdto == null }">
-							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인 / 회원가입</a></li>
+							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인</a></li>
 						</c:when>
 						<c:otherwise>
 							<li class="nav-item"><a class="nav-link" href="logout.dog">로그아웃</a></li>
 							<li class="nav-item"><a class="nav-link" href="editmember.jsp">정보수정</a></li>
 						</c:otherwise>
 					</c:choose>
+					<div style="width: 30px;"></div>
+					<li class="nav-item">
+						<a href="http://pf.kakao.com/_FCGSj/chat">
+							<img src="https://developers.kakao.com/assets/img/about/logos/plusfriend/consult_small_yellow_pc.png"/>
+						</a>
 					</li>
 				</ul>
 			</div>

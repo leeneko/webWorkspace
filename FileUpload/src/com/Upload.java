@@ -24,10 +24,10 @@ public class Upload extends HttpServlet {
 //		System.out.println(saveDir);
 //		D:\webWorkspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\FileUpload\file
 		int maxSize = 5 * 1024 * 1024; // 5MB
-		String enconding = "EUC-KR";
+		String encoding = "EUC-KR";
 		
 		// request 객체, 저장될 위치, 파일 최대 크기, 인코딩 방식, 중복값 처리 방식
-		MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, enconding, new DefaultFileRenamePolicy());
+		MultipartRequest multi = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 		String writter = multi.getParameter("writter");
 		String title = multi.getParameter("title");
 		String content = multi.getParameter("content");

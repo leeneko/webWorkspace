@@ -22,25 +22,20 @@
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/layer.css" rel="stylesheet">
 </head>
-<body id="page-top"  style="background-color: #212529;">
+<body id="page-top" style="background-color: #212529;">
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="index.jsp">개랑후라이</a>
+			<a class="navbar-brand js-scroll-trigger" href="index.jsp"><img src="img/logo.png"></a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				Menu <i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#board">게시판</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">분양등록</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">반려견 매칭</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="map.jsp">보호소</a></li>
-					<!--
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
-						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-					-->
 					<c:choose>
 						<c:when test="${sessionScope.memberdto == null }">
-							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인 / 회원가입</a></li>
+							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인</a></li>
 						</c:when>
 						<c:otherwise>
 							<li class="nav-item"><a class="nav-link" href="logout.dog">로그아웃</a></li>
@@ -181,10 +176,6 @@
 		function refresh() {
 			var map = new daum.maps.Map(mapContainer, mapOption);
 			marker.setMap(map);
-			var mapTypeControl = new daum.maps.MapTypeControl();
-			map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
-			var zoomControl = new daum.maps.ZoomControl();
-			map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 		}
 	</script>
 	

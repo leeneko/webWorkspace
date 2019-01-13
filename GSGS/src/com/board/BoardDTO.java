@@ -11,6 +11,17 @@ public class BoardDTO {
 	private int board_views;
 	public BoardDTO() {
 	}
+	
+	public BoardDTO(String category, String board_title, String board_writer, String board_content,
+			String board_imgpath) {
+		super();
+		this.category = category;
+		this.board_title = board_title;
+		this.board_writer = board_writer;
+		this.board_content = board_content;
+		this.board_imgpath = board_imgpath;
+	}
+
 	public BoardDTO(String category, int board_num, String board_title, String board_writer, String board_date,
 			String board_content, String board_imgpath, int board_views) {
 		this.category = category;

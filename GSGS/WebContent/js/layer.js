@@ -64,9 +64,9 @@ function pwCpw() {
 	var cpw = document.joinForm.cpw.value;
 	
 	if (pw != cpw) {
-		document.getElementById("pwchk").innerHTML = "비밀번호와 비밀번호 확인을 확인해주세요";
+		document.getElementById("pwchk").style.display = "block";
 	} else {
-		document.getElementById("pwchk").innerHTML = "";
+		document.getElementById("pwchk").style.display = "none";
 	}
 }
 
@@ -123,9 +123,9 @@ function callback() {
 		// 결과 값을 가져온다.
 		var resultText = httpRequest.responseText;
 		if (resultText == 0) {
-			document.getElementById("chk").innerHTML = "중복된 아이디가 있습니다. 사용이 불가능합니다.";
+			document.getElementById("chk").style.display = "block";
 		} else if (resultText == 1) {
-			document.getElementById("chk").innerHTML = "사용 가능한 아이디입니다.";
+			document.getElementById("chk").style.display = "none";
 			document.joinForm.idDublication.value = "idCheck";
 		}
 	}
@@ -145,13 +145,3 @@ function idChk() {
 		httpRequest.send(param);
 	}
 }
-
-$("#allBoard tr").click(function(){
-	var str = "";
-	var tdArr = new Array(); // 배열
-	// 현재 클릭된 Row(<tr>)
-	var tr = $(this);
-	var td = tr.children();
-	// tr.text()는 클릭된 Row 즉, tr에 있는 모든 값을 가져온다.
-	
-});

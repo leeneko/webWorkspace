@@ -42,4 +42,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.board.BoardDTO"/>
+<fullyQualifiedTypeName name="com.board.BoardDAO"/>
 </qualifiedTypeNameHistroy>

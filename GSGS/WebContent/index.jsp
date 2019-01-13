@@ -5,6 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- jQuery  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+<!-- bootstrap JS -->
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
@@ -23,6 +29,13 @@
 <!-- Custom styles for this template -->
 <link href="css/agency.min.css" rel="stylesheet">
 <link href="css/layer.css" rel="stylesheet">
+
+<style type="text/css">
+.masthead {
+	background-image: url(img/1.gif) !important;
+}
+</style>
+
 </head>
 
 <body id="page-top">
@@ -35,7 +48,8 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#board">게시판</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">반려견 매칭</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="rgst.jsp">분양</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="matching.jsp">반려견 매칭</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="map.jsp">보호소</a></li>
 					<!--
 						<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
@@ -43,7 +57,7 @@
 					-->
 					<c:choose>
 						<c:when test="${sessionScope.memberdto == null }">
-							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인 / 회원가입</a></li>
+							<li class="nav-item"><a href="#loginlayer" class="btn-example nav-link">로그인</a></li>
 						</c:when>
 						<c:otherwise>
 							<li class="nav-item"><a class="nav-link" href="logout.dog">로그아웃</a></li>
@@ -88,7 +102,7 @@
 	                <form id="register-form" name="joinForm" action="join.dog" method="post" role="form" style="display: none;" onsubmit="return check();">
 						<div class="form-group" align="center">
 							<input type="text" name="email" id="email" tabindex="2" class="form-control" placeholder="이메일" maxlength="50" onfocus="inputIdChk()" onblur="idChk()">
-							<p id="chk" style="color: red;"></p>
+							<div id="chk" class="alert alert-danger" style="display: none; align: center;">중복된 <strong>이메일</strong>가 있습니다.</div>
 							<input type="hidden" id="idDuplication" value="idUncheck">
 						</div>
 						<div class="form-group">
@@ -96,7 +110,7 @@
 						</div>
 						<div class="form-group">
 							<input type="password" name="cpw" id="cpw" tabindex="2" class="form-control" placeholder="비밀번호 확인" maxlength="16" onblur="pwCpw()">
-							<p id="pwchk" style="color: red;"></p>
+							<div id="pwchk" class="alert alert-danger" style="display: none; align: center;">비밀번호와 비밀번호 확인을 확인해주세요</div>
 						</div>
 						<div class="form-group">
 							<input type="tel" name="tel" id="tel" tabindex="2" class="form-control" placeholder="010-0000-0000"> 
@@ -128,9 +142,7 @@
 				<c:when test="${sessionScope.memberdto == null }">
 					<div class="intro-lead-in">당신의 반려견을 찾아보세요</div>
 					<div class="intro-heading text-uppercase"></div>
-					<a href="#loginlayer" class="btn-example" style="background-color: #fec810; color: white;
-					font-size: 18px; padding: 20px 40px; border-radius: .25rem; line-height: 1.5;
-					border: 1px solid transparent; box-sizing: border-box;">
+					<a href="#loginlayer" class="btn btn-example nav-link btn-primary btn-xl text-uppercase">
 						<b>로그인 / 회원가입</b>
 					</a>
 				</c:when>
@@ -153,11 +165,11 @@
 	request.setAttribute("list", list);
 %>
 	<!-- Services -->
-	<section id="board">
+	<section id="board" style="">
 		<div class="container">
 			<h2>전체 게시판</h2>
 			<div class="table-responsive">          
-				<table class="table" id="allBoard">
+				<table class="table" id="board-table">
 					<thead>
 						<tr>
 							<th>#</th>
@@ -178,34 +190,62 @@
 					</tbody>
 				</table>
 			</div>
-			<div style="float: left;"></div>
+			<c:choose>
+				<c:when test="${sessionScope.memberdto == null }"></c:when>
+				<c:otherwise>
+					<div style="float: right;"><input type="button" class="btn btn-warning" value="글쓰기" onclick="location.href='boardWrite.jsp'"></div>
+				</c:otherwise>
+			</c:choose>	
 		</div>
 	</section>
-
+	<script type="text/javascript">
+		$("#board-table tbody tr").click(function(){
+			var str = "";
+			var tdArr = new Array(); // 배열
+			// 현재 클릭된 Row(<tr>)
+			var tr = $(this);
+			var td = tr.children();
+			// http://all-record.tistory.com/172
+			var no = td.eq(0).text();
+			var link = 'boardView.jsp?num=' + no;
+			location.href=link;
+		});
+	</script>
+	
 	<!-- Clients -->
 	<section class="py-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<a href="#"> <img class="img-fluid d-block mx-auto"
-						src="img/logos/envato.jpg" alt="">
+				<div id="carouselExampleControls" class="carousel slide"
+					data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<a
+								href="http://map.daum.net/link/map/튼튼동물병원,35.1641552,126.9205893"><img
+								src="img/aa.png" class="d-block w-100" alt=""></a>
+						</div>
+						<div class="carousel-item">
+							<a
+								href="http://map.daum.net/link/map/신세계동물병원,35.1475332, 126.9125806"><img
+								src="img/bb.png" class="d-block w-100" alt=""></a>
+						</div>
+						<div class="carousel-item">
+							<a
+								href="http://map.daum.net/link/map/광주동물보호소,35.2225606, 126.8817694"><img
+								src="img/cc.png" class="d-block w-100" alt=""></a>
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleControls"
+						role="button" data-slide="prev"> <span
+						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+						class="sr-only">Previous</span>
+					</a> <a class="carousel-control-next" href="#carouselExampleControls"
+						role="button" data-slide="next"> <span
+						class="carousel-control-next-icon" aria-hidden="true"></span> <span
+						class="sr-only">Next</span>
 					</a>
 				</div>
-				<div class="col-md-3 col-sm-6">
-					<a href="#"> <img class="img-fluid d-block mx-auto"
-						src="img/logos/designmodo.jpg" alt="">
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<a href="#"> <img class="img-fluid d-block mx-auto"
-						src="img/logos/themeforest.jpg" alt="">
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<a href="#"> <img class="img-fluid d-block mx-auto"
-						src="img/logos/creative-market.jpg" alt="">
-					</a>
-				</div>
+
 			</div>
 		</div>
 	</section>

@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;i class=&quot;fas fa-plus fa-3x&quot;&gt;&lt;/i&gt;"/>
 			<item value="pagination&gt;li"/>
 			<item value="pagination"/>
 			<item value="table"/>
@@ -22,9 +23,9 @@
 			<item value="id=&quot;team&quot;"/>
 			<item value="#team"/>
 			<item value="email"/>
-			<item value="btn"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="UTF-8"/>
 		</list>
 	</section>
