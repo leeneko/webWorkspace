@@ -67,7 +67,7 @@
 					</c:choose>
 					<div style="width: 30px;"></div>
 					<li class="nav-item">
-						<a href="http://pf.kakao.com/_FCGSj/chat">
+						<a href="http://pf.kakao.com/_FCGSj/chat" target="_blank">
 							<img src="https://developers.kakao.com/assets/img/about/logos/plusfriend/consult_small_yellow_pc.png"/>
 						</a>
 					</li>

@@ -176,8 +176,24 @@ public class RgstDAO {
 	}
 	
 	public ArrayList<RgstDTO> similerSelect(int i, String s1, String s2) {
-		
-		
-		return null;
+		getConnection();
+		ArrayList<RgstDTO> list = new ArrayList<RgstDTO>();
+		try {
+			// SELECT num, imgpath FROM rgst WHERE dogsize='소형견' AND ap1='멋짐' AND 8 NOT IN(num)
+			String sql = "SELECT num, imgpath FROM rgst WHERE dogsize = ? AND ap1 = ? AND ? NOT IN(num)";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, s1);
+			pst.setString(2, s2);
+			pst.setInt(3, i);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				list.add(new RgstDTO(rs.getInt("num"), rs.getString("imgpath")));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			close();
+		}
+		return list;
 	}
 }

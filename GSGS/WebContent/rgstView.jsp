@@ -139,7 +139,7 @@
 	RgstDTO rdto = rdao.select(num);
 	request.setAttribute("rdto", rdto);
 %>
-	<section>
+	<section style="margin: 60px;">
 		<div class="container">
 			<div class="row">
 				<table width="100%">
@@ -205,7 +205,7 @@
 						<div id="collapseThree" class="collapse"
 							aria-labelledby="headingThree" data-parent="#accordionExample">
 							<div class="card-body">
-								<button type="button" class="btn btn-warning">분양하기</button>
+								<button type="button" class="btn btn-warning" onclick="location.href='rgstOut.jsp?num=${rdto.num }'">분양하기</button>
 								<button type="button" class="btn btn-dark" onclick="history.back()">뒤로가기</button>
 							</div>
 						</div>
@@ -226,21 +226,33 @@
 	// 크기, 생김새로 찾기(열려있는 게시글은 중복으로, 중복 제거 NOT IN)
 	int temp = Integer.parseInt((String) request.getParameter("num"));
 	ArrayList<RgstDTO> arr = rdao.similerSelect(temp, rdto.getDogsize(), rdto.getAp1());
-	
+	request.setAttribute("arr", arr);
 %>
 								<div class="row">
 									<div id="carouselExampleControls" class="carousel slide"
 										data-ride="carousel">
 										<div class="carousel-inner">
-											<div class="carousel-item active">
-												<img src="..." class="d-block w-100" alt="...">
-											</div>
-											<div class="carousel-item">
-												<img src="..." class="d-block w-100" alt="...">
-											</div>
-											<div class="carousel-item">
-												<img src="..." class="d-block w-100" alt="...">
-											</div>
+											<c:choose>
+												<c:when test="${arr != null }">
+													<div class="carousel-item active" style="text-align: center;">
+														<a href="rgstView.jsp?num=${arr.get(0).num }">
+															<img src="file/${arr.get(0).imgpath }" class="d-block w-100" alt="애완견 이미지"
+																style="min-width: 50%; min-height: 50%; max-width: 77%; max-height: 77%;">
+														</a>
+													</div>
+													<c:forEach items="${arr }" begin="1" step="1" var="ar">
+														<div class="carousel-item" style="text-align: center;">
+															<a href="rgstView.jsp?num=${ar.num }">
+																<img src="file/${ar.imgpath }" class="d-block w-100" alt="애완견 이미지"
+																	style="min-width: 50%; min-height: 50%; max-width: 77%; max-height: 77%;">
+															</a>
+													</div>
+													</c:forEach>
+												</c:when>
+												<c:otherwise>
+													<h5>비슷한 강아지로 검색된 값이 없습니다.</h5>
+												</c:otherwise>
+											</c:choose>
 										</div>
 										<a class="carousel-control-prev"
 											href="#carouselExampleControls" role="button"

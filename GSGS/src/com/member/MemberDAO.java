@@ -148,5 +148,26 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
-
+	
+	public MemberDTO select(String name) {
+		MemberDTO dto = new MemberDTO();
+		getConnection();
+		try {
+			// SELECT * FROM dog_member WHERE member_name = ?
+			String sql = "SELECT * FROM dog_member WHERE member_name = ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, name);
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				dto.setMember_addr(rs.getString("member_addr"));
+				dto.setMember_tel(rs.getString("member_tel"));
+				dto.setMember_name(rs.getString("member_name"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return dto;
+	}
 }

@@ -38,10 +38,13 @@
 <fullyQualifiedTypeName name="com.member.Join"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.member.Login"/>
-<fullyQualifiedTypeName name="com.member.MemberDTO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.board.BoardDTO"/>
 <fullyQualifiedTypeName name="com.board.BoardDAO"/>
+<fullyQualifiedTypeName name="com.member.MemberDTO"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.rgst.RgstDTO"/>
+<fullyQualifiedTypeName name="com.rgst.RgstDAO"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

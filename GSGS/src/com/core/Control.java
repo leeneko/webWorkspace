@@ -25,6 +25,7 @@ public class Control extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
@@ -157,6 +158,13 @@ public class Control extends HttpServlet {
 				out.println("<script>alert('분양 등록에 실패했습니다.'); location.href='index.jsp';</script>");
 				out.flush();
 			}
+		}
+		if (com.equals("out.dog")) {
+			// 핀 번호 발급
+			String str = "입양을 축하드립니다. \\nPin. 497-5421";
+			out.println("<script>alert('" + str +"'); location.href='index.jsp';</script>");
+			out.flush();
+			out.close();
 		}
 		
 		RequestDispatcher dis = request.getRequestDispatcher(nextPage);
