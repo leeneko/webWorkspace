@@ -43,7 +43,6 @@
 <fullyQualifiedTypeName name="com.board.BoardDTO"/>
 <fullyQualifiedTypeName name="com.board.BoardDAO"/>
 <fullyQualifiedTypeName name="com.member.MemberDTO"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.rgst.RgstDTO"/>
 <fullyQualifiedTypeName name="com.rgst.RgstDAO"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
@@ -54,4 +53,5 @@
 <fullyQualifiedTypeName name="com.mongodb.MongoCredential"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

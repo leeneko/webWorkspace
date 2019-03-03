@@ -19,6 +19,8 @@ D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1342055493
 \Project\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1966869918.index
 \Scope\src
+D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2695018651.index
+\ArduinoServer\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1221368842.index
 \EL\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\910974088.index
@@ -39,5 +41,7 @@ D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3418011592
 \HTML\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4201922625.index
 \Project\src
+D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3563913586.index
+\Arduino\src
 D:\webWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\721939392.index
 \JSP\src
